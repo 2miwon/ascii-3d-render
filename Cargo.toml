@@ -1,0 +1,21 @@
+[package]
+name = "asciipet"
+version = "0.1.0"
+edition = "2021"
+description = "A tiny 3D character that hops, blinks and dances in your terminal, rendered as ASCII with SDF ray marching"
+license = "MIT"
+readme = "README.md"
+keywords = ["ascii", "terminal", "sdf", "raymarching", "animation"]
+categories = ["command-line-utilities", "rendering"]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+crossterm = "0.28"
+glam = "0.29"
+rayon = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true
